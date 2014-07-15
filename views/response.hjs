@@ -21,10 +21,8 @@
     </div>
     <div class="m-signature-pad--footer">
       <div class="description">Sign above</div>
-      <button class="button save" data-action="save">Save</button>
-    </div>
   </div>
-  
+
   <script src="js/app.js"></script>
   <script src="js/jquery-1.11.1.js"></script>
 </body>

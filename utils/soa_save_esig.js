@@ -20,7 +20,7 @@ var soapSaveImage = function(){
 				 	data.applicantId='1261' //default test applicant
 				 }
 				 if (data.userRoleType == null){
-				 	data.userRoleType='Applicant' //default
+				 	data.userRoleType='Recruiter' //default
 				 }
 				 if (data.userRoleId == null){
 				 	data.userRoleId=data.applicantId //default
@@ -29,18 +29,15 @@ var soapSaveImage = function(){
 				 	data.formId='2807-2' //default
 				 }
 				 if (data.signatureType == null){
-				 	data.signatureType='Esignature' //default
+				 	data.signatureType='Dsignature' //default
 				 }
 				 if (data.signaturePrint == null){
-				 	data.signaturePrint='png' //default
+				 	data.signaturePrint='text' //default
 				 }
 				 if (data.signatureImage == null){
 				 	return "Input needs a signatureImage!";
 				 }
-				 var baseString = data.signatureImage;//data
-			     var index = baseString.indexOf(",");  // Gets the first index
-			             //var imageEncodeType = baseString.substr(0, index); // first part
-			     var textCode = baseString.substr(index + 1);//second part
+				
 				 var saveArgs = {requestHeader:{ loginUserName: 'null', requestId:'1'}, 
                                         applicantId: data.applicantId,
                                         userRoleType: data.userRoleType,
@@ -48,7 +45,7 @@ var soapSaveImage = function(){
                                         formId: data.formId,
                                         signatureType : data.signatureType,
                                         signaturePrint : data.signaturePrint,
-                                        signatureImage  : textCode
+                                        signatureImage  : data.signatureImage
                                     };
 
                 soap.createClient(url, function(err, client) {
@@ -94,7 +91,7 @@ var soapSaveImage = function(){
 				           //userRoleType is the factor for the search
 				           for (var i=0; result.Signature !==undefined && (i < result.Signature.length) ; ++i){
 				           		console.log(result.Signature[i].userRoleType);
-				           		if(result.Signature[i].userRoleType == 'Applicant'){
+				           		if(result.Signature[i].userRoleType == 'Recruiter'){
 				           			return callback(result.Signature[i]);
 				           		}
 				           }
