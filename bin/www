@@ -1,9 +1,33 @@
 #!/usr/bin/env node
 var debug = require('debug')('CACSignature');
 var app = require('../app');
+var https = require('https'),
+	fs =    require('fs'),        // required to read certs and keys
+    path = require('path');
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3004);
 
-var server = app.listen(app.get('port'), function() {
-  debug('Express server listening on port ' + server.address().port);
-});
+// var server = app.listen(app.get('port'), function() {
+//   debug('Express server listening on port ' + server.address().port);
+// });
+console.log("directory name : [%s]", path.join(__dirname, '../fakecerts', 'server.crt'));
+var options = {
+     cert : fs.readFileSync(path.join(__dirname, '../fakecerts/ca2/', 'server2.crt')),
+     key  : fs.readFileSync(path.join(__dirname, '../fakecerts', 'server.key')),
+     ca   : fs.readFileSync(path.join(__dirname, '../fakecerts/ca2/', 'ca2.crt')),
+    requestCert:        true,
+    rejectUnauthorized: false,
+    passphrase: 'tae123456'
+};
+
+https.createServer(options,app).listen(443);;
+
+// if (req.client.authorized) {
+//         res.writeHead(200, {"Content-Type": "application/json"});
+//         res.end('{"status";:"approved"}');
+//     } else {
+//     	var cert = req.connection.getPeerCertificate();
+//         res.writeHead(200, {"Content-Type": "application/json"});
+//         res.write(JSON.stringify({"status": "denied", "cert" : cert}) );
+//         res.end();
+//     }
