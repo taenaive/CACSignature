@@ -6,6 +6,15 @@ var router = express.Router();
 router.get('/', function(req, res) {
   //for http://taeyoon.us:3003/?req_type=r&applicantId=1261&formId=2807-2
   //http://localhost:3003/?req_type=r&applicantId=1271&formId=2807-2
+  if (req.client.authorized) {
+        //res.writeHead(200, {"Content-Type": "application/json"});
+        res.send('{"status";:"approved"}');
+    } else {
+     var cert = req.connection.getPeerCertificate();
+        //res.writeHead(200, {"Content-Type": "application/json"});
+        res.send(JSON.stringify({"status": "denied", "cert" : cert}) );
+       
+    }
   var sig = req.query;
       console.log(sig);
   if (sig.req_type && sig.req_type == 'r'){
@@ -58,3 +67,5 @@ router.post('/post',function(req, res){
 
 
 module.exports = router;
+
+
