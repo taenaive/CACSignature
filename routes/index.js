@@ -49,8 +49,9 @@ router.post('/post',function(req, res){
         signatureImage  : new Buffer(JSON.stringify(cert)).toString('base64')
   };
  
-  soapSave.save(inputData, function (result ){
-  	res.send(result);
+  soapSave.save(inputData, function (result ){ console.log(result);
+
+  	res.send(JSON.stringify(result));
   });
   //Creature.prototype.insertSignature(this.req.body);
   //res.writeHead(200, { 'Content-Type': 'application/json' });

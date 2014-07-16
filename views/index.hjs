@@ -20,8 +20,8 @@
       <p>{{ cacContent }}</p>
     </div>
     <div class="m-signature-pad--footer">
-      <div class="description">Sign above</div>
-      <button class="button save" data-action="save">Save</button>
+      <div class="description">Sign using your CAC credential above</div>
+      <button class="button save" data-action="save">Sign</button>
     </div>
   </div>
   

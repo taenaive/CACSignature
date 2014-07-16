@@ -20,7 +20,8 @@
       <p>{{ cacContent }}</p>
     </div>
     <div class="m-signature-pad--footer">
-      <div class="description">Sign above</div>
+      <div class="description">Retrieved The Signature.</div> 
+      <button class="button save" data-action="close">close</button>
   </div>
 
   <script src="js/app.js"></script>
