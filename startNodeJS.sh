@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo node ./bin/www 
+sudo node /home/tae/CACSignature/bin/www 
