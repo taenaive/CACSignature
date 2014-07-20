@@ -1,7 +1,7 @@
 var wrapper = document.getElementById("signature-pad"),
     clearButton = wrapper.querySelector("[data-action=clear]"),
     saveButton = wrapper.querySelector("[data-action=save]");
-    closeButton = wrapper.querySelector("[data-action=close]");
+//    closeButton = wrapper.querySelector("[data-action=close]");
 
 //helper to get params 
 function getParameterByName(name) {
@@ -38,10 +38,10 @@ saveButton.addEventListener("click", function (event) {
     
 });
 }
-if(closeButton != null){
-closeButton.addEventListener("click", function (event) {
+// if(closeButton != null){
+// closeButton.addEventListener("click", function (event) {
 
-    open(location, '_self').close();
+//     open(location, '_self').close();
 
-});
-}
+// });
+// }

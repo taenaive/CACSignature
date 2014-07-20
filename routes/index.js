@@ -38,7 +38,13 @@ router.post('/post',function(req, res){
   var sig = req.body;
   console.log("applicant id = [%s]" ,sig.applicantId );
   console.log("form id = [%s]" ,sig.formId );
-  
+  if (!cert.subject){
+    console.log("I am here")
+    res.send({ inputError: 'failed'});
+    //console.log("I am here")
+    
+  }
+  else{
   var inputData = {
   		applicantId: sig.applicantId,
       userRoleType: sig.userRoleType,
@@ -55,7 +61,7 @@ router.post('/post',function(req, res){
   });
   //Creature.prototype.insertSignature(this.req.body);
   //res.writeHead(200, { 'Content-Type': 'application/json' });
-  
+  }
 });
 
 

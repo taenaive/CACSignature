@@ -1,7 +1,7 @@
 var wrapper = document.getElementById("signature-pad"),
     clearButton = wrapper.querySelector("[data-action=clear]"),
     saveButton = wrapper.querySelector("[data-action=save]");
-    closeButton = wrapper.querySelector("[data-action=close]");
+//    closeButton = wrapper.querySelector("[data-action=close]");
 
 //helper to get params 
 function getParameterByName(name) {
@@ -10,6 +10,8 @@ function getParameterByName(name) {
         results = regex.exec(location.search);
     return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
+
+var location_pointer = location;
 //https://localhost:3004/?req_type=r&applicantId=1271&formId=2807-2&userRoleType=Recruiter
 if(saveButton != null){
 saveButton.addEventListener("click", function (event) {
@@ -38,7 +40,8 @@ saveButton.addEventListener("click", function (event) {
          formId :    formId_in,
          userRoleType: userRoleType_in}, // Serializes form data in standard format
         function(data ) {
-            var dataOutputStr = "something went wrong"
+            var dataOutputStr = "something went wrong";
+            console.log(dataOutputStr);
             if (data.operationStatus != null) {
             // alert("<server respone>\n" + "Operation status : " + data.operationStatus +"\n"+
             //         "Instance ID : " + data.instanceId );
@@ -53,7 +56,10 @@ saveButton.addEventListener("click", function (event) {
             
             $(document.body).empty();
             $(document.body).prepend('<p> Operation status =' +dataOutputStr+'<p/>');
-            $(document.body).append('<button class="button save" data-action="close">close</button>');
+            //$(document.body).append('<button class="button save" data-action="close">close</button>');
+            }
+            else{
+                window.history.back();
             }
          },
         "json" // The format the response should be in
@@ -62,10 +68,10 @@ saveButton.addEventListener("click", function (event) {
     
 });
 }
-if(closeButton != null){
-closeButton.addEventListener("click", function (event) {
+// if(closeButton != null){
+// closeButton.addEventListener("click", function (event) {
 
-    open(location, '_self').close();
+//     open(location, '_self').close();
 
-});
-}
+// });
+// }
