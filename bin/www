@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 var debug = require('debug')('CACSignature');
 var app = require('../app');
+var frontEndApp = require('../appFrontEnd.js');
 var https = require('https'),
+	http = require('http'),
 	fs =    require('fs'),        // required to read certs and keys
     path = require('path');
 
 app.set('port', process.env.PORT || 3004);
-
+frontEndApp.set('port',3005);
 // var server = app.listen(app.get('port'), function() {
 //   debug('Express server listening on port ' + server.address().port);
 // });
@@ -19,8 +21,20 @@ var options = {
     rejectUnauthorized: false,
     passphrase: 'tae123456'
 };
+// CAC Authentication server
+https.createServer(options,app).listen(app.get('port'));
+// Front end Server with socket.io
+var frontEndServer =http.createServer(frontEndApp);
+io = require('socket.io').listen(frontEndServer);
+frontEndServer.listen(frontEndApp.get('port'));
 
-https.createServer(options,app).listen(app.get('port'));;
+io.sockets.on('connection', function (socket) {
+  //socket.emit('news', { hello: 'world' });
+  socket.on('cac event', function (data) {
+    console.log(data);
+    io.emit('cac listenOnly', data);
+  });
+});
 
 // if (req.client.authorized) {
 //         res.writeHead(200, {"Content-Type": "application/json"});

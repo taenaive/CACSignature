@@ -10,8 +10,8 @@ var soap = require('soap');
 
 var soapSaveImage = function(){
 
-	//wsdl location
-	var url = 'http://198.135.15.92:8001/soa-infra/services/default/SignatureService/SignatureService_ep?WSDL';
+	//wsdl location 198.135.15.92 =dev 
+	var url = 'http://198.135.15.122:8001/soa-infra/services/default/SignatureService/SignatureService_ep?WSDL';
     var retrieveArgs = {requestHeader:{ loginUserName: 'null', requestId:'1'}, applicantId:'1261'};
 	var func = {
 		save : function(data , callback){
