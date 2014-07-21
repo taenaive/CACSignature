@@ -36,7 +36,7 @@ io.sockets.on('connection', function (socket) {
   });
 });
 
-console.log('FrontEndServer = port '+ apt.get('port') + ' , CAC authentication server = port '+  frontEndApp.get('port'));
+console.log('FrontEndServer = port '+ app.get('port') + ' , CAC authentication server = port '+  frontEndApp.get('port'));
 // if (req.client.authorized) {
 //         res.writeHead(200, {"Content-Type": "application/json"});
 //         res.end('{"status";:"approved"}');
