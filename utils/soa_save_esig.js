@@ -9,9 +9,13 @@ var soap = require('soap');
     // }
 
 var soapSaveImage = function(){
-
+	//internal
+	var url = 'http://192.168.0.6:8001/soa-infra/services/default/SignatureService/SignatureService_ep?WSDL';
+	//dev
+	//var url = 'http://198.135.15.92:8001/soa-infra/services/default/SignatureService/SignatureService_ep?WSDL';
+	//mp-beta
 	//wsdl location 198.135.15.92 =dev 
-	var url = 'http://198.135.15.122:8001/soa-infra/services/default/SignatureService/SignatureService_ep?WSDL';
+	//var url = 'http://198.135.15.122:8001/soa-infra/services/default/SignatureService/SignatureService_ep?WSDL';
     var retrieveArgs = {requestHeader:{ loginUserName: 'null', requestId:'1'}, applicantId:'1261'};
 	var func = {
 		save : function(data , callback){
