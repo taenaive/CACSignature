@@ -18,7 +18,11 @@ router.get('/', function(req, res) {
         }
         else{
           var buf = new Buffer(b64string, 'base64');
-          res.render('response', { title: 'MPSTD CAC Signature response', cacContent: buf.toString('ascii') });
+          var  cacObj =JSON.parse( buf.toString('ascii') );
+          res.render('response',
+           { title: 'MPSTD CAC Signature response', cacContent: JSON.stringify(cacObj.subject),
+             cacSignature: JSON.stringify(cacObj.fingerprint)
+           });
         // console.log("base64 buffer length = " +buf.length);
         }
       } );   
