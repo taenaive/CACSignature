@@ -23,8 +23,12 @@ router.get('/', function(req, res) {
         }
         else{
           var buf = new Buffer(b64string, 'base64');
-          res.render('response', { title: 'MPSTD CAC Signature response', cacContent: buf.toString('ascii') });
-        // console.log("base64 buffer length = " +buf.length);
+          var  cacObj =JSON.parse( buf.toString('ascii') );
+          res.render('response',
+           { title: 'MPSTD CAC Signature response', cacContent: JSON.stringify(cacObj.subject),
+             cacSignature: JSON.stringify(cacObj.fingerprint),
+             timeStamp: JSON.stringify(result.signatureDateTime)
+           });
         }
       } );   
   }
@@ -39,10 +43,9 @@ router.post('/post',function(req, res){
   console.log("applicant id = [%s]" ,sig.applicantId );
   console.log("form id = [%s]" ,sig.formId );
   if (!cert.subject){
-    console.log("I am here")
     res.send({ inputError: 'failed'});
     //console.log("I am here")
-    
+    return;
   }
   else{
   var inputData = {

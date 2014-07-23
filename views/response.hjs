@@ -18,7 +18,8 @@
   <div id="signature-pad" class="m-signature-pad">
     <div class="m-signature-pad--body">
       <p>Signed by: {{ cacContent }}</p>
-      <p>Signature: {{ cacSignature}}</p>
+      <p>Signature: {{ cacSignature }}</p>
+      <p>Time signed: {{ timeStamp }}</p>
     </div>
     <div class="m-signature-pad--footer">
       

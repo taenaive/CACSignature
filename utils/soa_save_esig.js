@@ -86,6 +86,7 @@ var soapSaveImage = function(){
 			  	  if(err){
 			  	  	  console.log ("Error msg: " + err);
 			  	  	   callback({signatureImage: new Buffer('{ SignatureNotFound:'+err+'}').toString('base64')});
+			  	  	   return;
 			  	  }
   	              else{
 	  	  				console.log(" ======= Oracle SOA retrieveSignature Response: ======");
@@ -93,9 +94,11 @@ var soapSaveImage = function(){
 				        	if(err || result.responseHeader==undefined){
 			  	  	  			console.log ("Error msg: " + err);
 			  	  	   			callback( '{ SignatureNotFound:'+err+'}' );
+			  	  	   			return;
 			  	  			}
 				           //console.log (result.Signature);
 				           console.log(result.responseHeader.instanceId);
+				           //console.log (result);
 				           //userRoleType is the factor for the search
 				           for (var i=0; result.Signature !==undefined && (i < result.Signature.length) ; ++i){
 				           		console.log(result.Signature[i].userRoleType);

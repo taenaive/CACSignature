@@ -21,7 +21,8 @@ router.get('/', function(req, res) {
           var  cacObj =JSON.parse( buf.toString('ascii') );
           res.render('response',
            { title: 'MPSTD CAC Signature response', cacContent: JSON.stringify(cacObj.subject),
-             cacSignature: JSON.stringify(cacObj.fingerprint)
+             cacSignature: JSON.stringify(cacObj.fingerprint),
+             timeStamp: JSON.stringify(result.signatureDateTime)
            });
         // console.log("base64 buffer length = " +buf.length);
         }
