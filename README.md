@@ -17,9 +17,9 @@ It requires the same JSON query string to do Electronic and CAC card signatures.
 
 CAC sig : For recruiter,MP,ME signatures
 
+example ADF code for inlineFrameing :
 <af:inlineFrame source="http://mpstduidev:3004/?req_type=r&applicantId=#
-{bindings.applicantId.inputValue}
-&formId=2&userRoleType=#{bindings.userRoleType}""
+{bindings.applicantId.inputValue}&formId=2&userRoleType=#{bindings.userRoleType}""
 inlineStyle="width:300px;//this is the size you want to display the CAC signature.
 
-that is the whole code you have to use for ADF. 
+
