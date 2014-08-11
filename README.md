@@ -14,12 +14,8 @@ There is a another port 3005 but this is for basic use. user 3004 for the full m
 
 It requires the same JSON query string to do Electronic and CAC card signatures.
 
-<af:inlineFrame source="http://mpstduidev:3003/?req_type=r&applicantId=#
-{bindings.applicantId.inputValue}
-&formId=2&userRoleType=#{bindings.userRoleType}"
-inlineStyle="width:300px; //this is the size you want to display E signature
 
-CAC sig :recruiter's signature
+CAC sig : For recruiter,MP,ME signatures
 <af:inlineFrame source="http://mpstduidev:3004/?req_type=r&applicantId=#
 {bindings.applicantId.inputValue}
 &formId=2&userRoleType=#{bindings.userRoleType}""
