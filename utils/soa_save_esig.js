@@ -102,7 +102,7 @@ var soapSaveImage = function(url){
 				           //userRoleType is the factor for the search
 				           for (var i=0; result.Signature !==undefined && (i < result.Signature.length) ; ++i){
 				           		console.log(result.Signature[i].userRoleType);
-				           		if(result.Signature[i].userRoleType == 'Recruiter'){
+				           		if(result.Signature[i].userRoleType == data.userRoleType){
 				           			return callback(result.Signature[i]);
 				           		}
 				           }

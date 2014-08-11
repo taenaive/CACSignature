@@ -14,7 +14,8 @@ router.get('/', function(req, res) {
   if (sig.req_type && sig.req_type == 'r'){
       var inputData = {
         applicantId: sig.applicantId,
-        formId: sig.formId        
+        formId: sig.formId ,
+        userRoleType: sig.userRoleType       
       };
       soapSave.retrieve(inputData,function (result ){
         var b64string = result.signatureImage;
