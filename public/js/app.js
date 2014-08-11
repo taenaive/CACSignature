@@ -29,7 +29,7 @@ saveButton.addEventListener("click", function (event) {
             return;
         }
         if( userRoleType_in=="") {
-            alert("Fail: applicantid not provided!");
+            alert("Fail: userRoleType not provided!");
             return;
         }
         // console.log(getParameterByName('formid') );
