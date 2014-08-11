@@ -80,7 +80,8 @@ var soapSaveImage = function(url){
 				 }
 			var saveArgs = {requestHeader:{ loginUserName: 'null', requestId:'1'}, 
                                         applicantId: data.applicantId,
-                                        formId: data.formId
+                                        formId: data.formId,
+                                        userRoleType: data.userRoleType
                                     };
             soap.createClient(url, function(err, client) {
 			  	  if(err){

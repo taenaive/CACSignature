@@ -16,6 +16,7 @@ It requires the same JSON query string to do Electronic and CAC card signatures.
 
 
 CAC sig : For recruiter,MP,ME signatures
+
 <af:inlineFrame source="http://mpstduidev:3004/?req_type=r&applicantId=#
 {bindings.applicantId.inputValue}
 &formId=2&userRoleType=#{bindings.userRoleType}""

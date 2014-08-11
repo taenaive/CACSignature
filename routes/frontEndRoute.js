@@ -6,10 +6,15 @@ var router = express.Router();
 router.get('/', function(req, res) {
    var sig = req.query;
       console.log(sig);
+  if(!sig.userRoleType){
+    res.render('front_end', { title: 'MPSTD CAC Signature', cacContent: "need to supply userRoleType" });
+    return;
+  }
   if (sig.req_type && sig.req_type == 'r'){
       var inputData = {
         applicantId: sig.applicantId,
-        formId: sig.formId        
+        formId: sig.formId,
+        userRoleType: sig.userRoleType        
       };
       soapSave.retrieve(inputData,function (result ){
         var b64string = result.signatureImage;
