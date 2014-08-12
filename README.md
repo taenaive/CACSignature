@@ -9,7 +9,7 @@ How to intall
 -------------
 
 ```js
-* git clone https://github.com/taenaive/Esignature.git
+* git clone https://github.com/taenaive/CACSignature.git
 * ***Change to cloned dir:*** cd Esignature
 * npm install
 * npm install soap
