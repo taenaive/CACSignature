@@ -3,6 +3,23 @@ CACSignature
 
 Smart card client sign in node.js server app
 
+How to intall
+-------------
+
+```js
+* git clone https://github.com/taenaive/Esignature.git
+* ***Change to cloned dir:*** cd Esignature
+* npm install
+* npm install soap
+```
+
+How to run
+----------
+
+```js
+* node bin/www
+```
+
 required params:
 ----------------
 
