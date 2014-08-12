@@ -22,11 +22,12 @@ How to run
 
 required params:
 ----------------
-
-* ***formId = <1-5:SOA service agreed string> example***: ?formId=2
+```js
+* ***formId = <1-5:SOA service agreed string> example ***: ?formId=2
 * ***req_type=r*** :constant
 * ***applicantId=<SOA agreed string> example*** : applicantId=1234
 * ***userRoleType= <SOA agreed string> example*** : userRoleType=Recruiter
+```
 
 Use the port CACsing:port 3005
 There is a another port 3004 but this is for basic use. use 3004 for the full multiuser services.
