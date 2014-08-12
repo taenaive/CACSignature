@@ -32,10 +32,10 @@ How to Use
 * ***userRoleType= <SOA agreed string>*** //example : userRoleType=Recruiter
 ```
 
-Use the port CACsing:port 3005
-There is a another port 3004 but this is for basic use. use 3004 for the full multiuser services.
+*Use the port :port 3005
+*There is a another port 3004 but this is for basic use. use 3004 for the full multiuser services.
 
-It requires the same JSON query string to do Electronic and CAC card signatures.
+*It requires the same JSON query string to do Electronic and CAC card signatures.
 
 
 ***CAC sig*** : For recruiter,MP,ME signatures
