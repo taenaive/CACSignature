@@ -2,6 +2,7 @@ CACSignature
 ============
 
 Smart card client sign in node.js server app
+***CAC sig*** : For recruiter,MP,ME signatures
 
 How to intall
 -------------
@@ -38,7 +39,7 @@ How to Use
 * It requires the same JSON query string to do Electronic and CAC card signatures.
 
 
-***CAC sig*** : For recruiter,MP,ME signatures
+
 
 ###Example ADF code for inlineFraming :
 
