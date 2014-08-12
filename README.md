@@ -20,7 +20,9 @@ How to run
 * node bin/www
 ```
 
-required params:
+###How to Use
+
+Required params:
 ----------------
 ```js
 * ***formId = <1-5:SOA service agreed string>*** //example : ?formId=2
@@ -37,7 +39,7 @@ It requires the same JSON query string to do Electronic and CAC card signatures.
 
 ***CAC sig*** : For recruiter,MP,ME signatures
 
-example ADF code for inlineFraming :
+Example ADF code for inlineFraming :
 -------------------------------------
 ```adf
 <af:inlineFrame source="http://mpstduidev:3005/?req_type=r&applicantId=#
