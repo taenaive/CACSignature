@@ -23,10 +23,10 @@ How to run
 required params:
 ----------------
 ```js
-* ***formId = <1-5:SOA service agreed string> example ***: ?formId=2
+* ***formId = <1-5:SOA service agreed string>*** //example : ?formId=2
 * ***req_type=r*** :constant
-* ***applicantId=<SOA agreed string> example*** : applicantId=1234
-* ***userRoleType= <SOA agreed string> example*** : userRoleType=Recruiter
+* ***applicantId=<SOA agreed string>*** //example : applicantId=1234
+* ***userRoleType= <SOA agreed string>*** //example : userRoleType=Recruiter
 ```
 
 Use the port CACsing:port 3005
