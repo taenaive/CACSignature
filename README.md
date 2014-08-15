@@ -35,7 +35,7 @@ How to Use
 ```
 
 * Use the port :port 3005
-* There is a another port 3004 but this is for basic use. use 3004 for the full multiuser services.
+* There is a another port 3004 but this is for basic use. ***use 3005*** for the full multiuser services.
 
 * It requires the same JSON query string to do Electronic and CAC card signatures.
 
@@ -46,7 +46,7 @@ How to Use
 
 ```adf
 <af:inlineFrame source="http://mpstduidev:3005/?req_type=r&applicantId=#
-{bindings.applicantId.inputValue}&formId=2&userRoleType=#{bindings.userRoleType}""
+{bindings.applicantId.inputValue}&formId=2&userRoleType=#{bindings.userRoleType}"
 inlineStyle="width:300px;//this is the size you want to display the CAC signature.
 ```
 
